@@ -29,4 +29,6 @@ Where `Rx` and `Tx` are 3.3V serial receive and transmit lines. For example, con
 
 # Interface
 
-By default the `LIDAR` interface class is designed for use with a Raspberry Pi, where the default serial interface is on port `/dev/ttyAMA0`. When activated, the LIDAR interface sends a `b` character to turn the LIDAR device on. When `getLidar()` is called asynchronously, the interface waits until the start of a data frame is captured, reads out the entire frame (this might take a couple of seconds), and then returns it using `asyncio`. If the interface object is deleted (for example, if it gets garbage collected or the program terminates), an `e` character is sent to turn the LIDAR device off cleanly.
+By default the `LIDAR` interface class is designed for use with a Raspberry Pi, where the default serial interface is on port `/dev/ttyAMA0`.
+
+When activated, the LIDAR interface sends a `b` character to turn the LIDAR device on. When `getLidar()` is called asynchronously, the interface waits until the start of a data frame is captured, reads out the entire frame (this might take a couple of seconds), and then returns it using `asyncio`. If the interface object is deleted (for example, if it gets garbage collected or the program terminates), an `e` character is sent to turn the LIDAR device off cleanly.
